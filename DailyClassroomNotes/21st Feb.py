@@ -1,3 +1,5 @@
+#Importing required libraries 
+
 import pandas as pd
 import seaborn as sns
 import streamlit as st
@@ -14,7 +16,7 @@ def load_data():
 data = load_data()
 
 
-#Title and description 
+#Title and description
 
 st.title("Exploratory Data Analysis of Titanic Dataset")
 st.write("This is an EDA on the Titanic dataset.")
@@ -26,3 +28,12 @@ st.dataframe(data.head())
 
 st.subheader("Missing Values")
 missing_data = data.isnull().sum()
+st.write(missing_data)
+
+
+if st.checkbox("Fill missing Age with median"):
+    data["Age"].fillna(data["Age"].median(),inplace = True)
+
+if st.checkbox("Filling missing embarked with mode:"):
+    data["Embarked"].fillna(data)
+    
