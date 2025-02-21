@@ -37,3 +37,4 @@ if st.checkbox("Fill missing Age with median"):
 if st.checkbox("Filling missing embarked with mode:"):
     data["Embarked"].fillna(data)
     
+#complete the code and understand 
