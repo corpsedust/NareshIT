@@ -6,7 +6,7 @@ import ollama
 
 
 def eda_analysis(file_path):
-    df = pd.readd_csv(file_path)
+    df = pd.read_csv(file_path)
 
 
 
