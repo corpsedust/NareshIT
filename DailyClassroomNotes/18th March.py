@@ -24,5 +24,7 @@ y = df.iloc[:,3].values
 
 from sklearn.impute import SimpleImputer
 
-imputer = SimpleImputer()
-
+imputer = SimpleImputer(strategy="most_frequent")
+#imputer = SimpleImputer() #by default mean strategy
+imputer = imputer.fit(x[:,1:3])
+x[:,1:3] = imputer.transform(x[:,1:3])
