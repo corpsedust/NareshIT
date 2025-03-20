@@ -32,12 +32,12 @@ st.dataframe(sales_data)
 
 st.subheader("Descriptive Statistics")
 descriptive_stats = sales_data.units_sold.describe().T
-st.datframe(descriptive_stats)
+st.dataframe(descriptive_stats)
 
 
 mean_sales = sales_data.units_sold.mean()
 median_sales = sales_data.units_sold.median()
-mode_sales = sales_data.units_sold.mode()
+mode_sales = sales_data.units_sold.mode()[0]
 
 st.write(f"Mean of units sold: {mean_sales}")
 st.write(f"Median of units sold: {median_sales}")
@@ -45,10 +45,10 @@ st.write(f"Mode of units sold: {mode_sales}")
 
 #Group statistics by Category
 
-category_stats = sales_data.groupby("category")["units_sold"].agg("sum", "mean", "std").reset_index()
+category_stats = sales_data.groupby("category")["units_sold"].agg(["sum", "mean", "std"]).reset_index()
 category_stats.columns = ["Category", "Total Units Sold", "Average Units Sold", "Std Dev of Units Sold"]
 st.subheader("Category Statistics")
-st.dataframe("category_stats")
+st.dataframe(category_stats)
 
 
 #Inferential Statistics 
