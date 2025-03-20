@@ -19,7 +19,7 @@ y = dataset.iloc[:,-1]
 
 from sklearn.model_selection import train_test_split
 
-x_train, x_test, y_train, y_test = train_test_split(x,y , train_size= 0.8,  random_state=0)
+x_train, x_test, y_train, y_test = train_test_split(x,y , train_size= 0.7,  random_state=0)
 
 
 #Converting output from train_test_split which is a series data type to array
