@@ -89,6 +89,7 @@ st.subheader("Visualisations")
 #Histogram of units sold
 
 plt.figure(figsize=(10,6))
+fig, ax = plt.subplots()
 sns.histplot(sales_data.units_sold, bins = 10, kde = True)
 plt.axvline(mean_sales, color = "red", linestyle = "--", label = "Mean")
 plt.axvline(median_sales, color = "blue", linestyle = "--", label = "Median")
@@ -97,7 +98,7 @@ plt.title("Distribution of Units Sold")
 plt.xlabel("Units Sold")
 plt.ylabel("Frequency")
 plt.legend()
-st.pyplot()
+st.pyplot(fig)
 
 
 #Box plot for units sold category
