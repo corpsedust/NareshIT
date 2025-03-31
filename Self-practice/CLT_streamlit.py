@@ -47,3 +47,26 @@ plt.figure(figsize=(10,6))
 sns.displot(random_data, x = "sample_mean", kde = True, label = "sample_mean", color = "violet")
 plt.legend()
 st.pyplot(plt)
+
+
+st.subheader("Comparing Graphs based on sample size")
+fig2 = plt.figure()
+small_sample_mean = [sampler(population)[1] for _ in range(1000) if sampler(population)[0]<50]
+large_sample_mean = [sampler(population)[1] for _ in range(1000) if sampler(population)[0] >100]
+sns.histplot(small_sample_mean, kde = True, label = "Small Sample Mean", color = "blue")
+sns.histplot(large_sample_mean, kde = True, label = "Large Sample Mean", color = "red")
+plt.legend()
+plt.show()
+st.pyplot(fig2)
+st.write("As sample size increases, the graph goes towards normal distribution")
+
+st.subheader("Normal Distribution")
+fig3 = plt.figure()
+mean = random_data["sample_mean"].mean()
+std = random_data["sample_mean"].std()
+x = np.linspace(mean -3*std, mean+ 3*std, 100)
+plt.plot(x, norm.pdf(x,mean,std,), label = "Normal Curve")
+sns.histplot(random_data["sample_mean"], kde = "True", label = "SampleMeans")
+plt.legend()
+plt.show()
+st.pyplot(fig3)
