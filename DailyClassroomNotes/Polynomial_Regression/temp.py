@@ -50,3 +50,27 @@ lin_model_pred
 from sklearn.preprocessing import PolynomialFeatures
 poly_reg = PolynomialFeatures()
 x_poly = poly_reg.fit_transform(x)
+
+
+#WHAT IS HAPPENING HERE, WHY DO WE NEED LINEAR REGRESSION AGAIN ????
+poly_reg.fit(x_poly, y)
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(x_poly, y)
+
+#Polynomial Visualisation
+
+plt.scatter(x,y,color = "red")
+plt.plot(x, lin_reg_2.predict(poly_reg.fit_transform(x)), color = "Blue")
+plt.xlabel("Position Level")
+plt.ylabel("Salary")
+plt.show()
+
+lin_model_pred = lin_reg_2.predict(poly_reg.fit_transform([[6.5]]))
+lin_model_pred
+#The answer is 189498.10606061
+
+
+
+#CHANGE DEGREE OF POYNOMIAL AND SEE GRAPHS - HYPER PARAMETER TUNING
+
+
