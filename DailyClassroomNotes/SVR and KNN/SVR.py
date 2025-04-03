@@ -105,8 +105,8 @@ plt.show()
 
 
 
-lin_model_pred = svr_reg.predict([[6.5]])
-lin_model_pred
+svr_model_pred = svr_reg.predict([[6.5]])
+svr_model_pred
 
 
 #Predicted salary is not 175K
@@ -114,19 +114,43 @@ lin_model_pred
 
 
 
+#Decision tree Regressor
+
+from sklearn.tree import DecisionTreeRegressor 
+
+dt_reg = DecisionTreeRegressor(criterion="absolute_error",splitter = "random", random_state=0, max_depth=6)
+dt_reg.fit(x,y)
+
+
+plt.scatter(x,y,color = "red")
+plt.plot(x, dt_reg.predict(x), color = "Blue")
+plt.xlabel("DT Position Level")
+plt.ylabel("Salary")
+plt.show()
+
+dt_model_pred = dt_reg.predict([[6.5]])
+dt_model_pred
+
+
+#Salary comes out to be 150K
 
 
 
+#Random Forest
+
+from sklearn.ensemble import RandomForestRegressor
+rf_reg = RandomForestRegressor(random_state=0, criterion="poisson", max_depth = 6)
+
+rf_reg.fit(x,y)
+
+plt.scatter(x,y,color = "red")
+plt.plot(x, rf_reg.predict(x), color = "Blue")
+plt.xlabel("RF Position Level")
+plt.ylabel("Salary")
+plt.show()
+
+rf_model_pred = rf_reg.predict([[6.5]])
+rf_model_pred
 
 
-
-
-
-
-
-
-
-
-
-
-
+#This will give random values everytime it is executed unitl you set random_state to 0 (fixed number)
