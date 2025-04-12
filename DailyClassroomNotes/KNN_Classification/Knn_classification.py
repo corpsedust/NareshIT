@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from sklearn import *
 
 #Importing the dataset
 
@@ -16,14 +16,17 @@ x_train, x_test, y_train, y_test = train_test_split(x,y,train_size=0.80, random_
 
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
+
+#from sklearn.preprocessing import Normalizer
 #sc = Normalizer()
+
 
 x_train = sc.fit_transform(x_train)
 x_test = sc.fit_transform(x_test)
 
 
 from sklearn.neighbors import KNeighborsClassifier
-knn = KNeighborsClassifier(n_neighbors=5, weights = "distance")
+knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(x_train, y_train)
 
 
