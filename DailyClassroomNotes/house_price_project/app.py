@@ -14,7 +14,7 @@ import pickle
 
 #Load Dataset
 
-data = pd.read_csv(r"C:\Users\vineet\Desktop\Pyhtonshit\DailyClassroomNotes\house_price_project\USA_Housing.csv")
+data = pd.read_csv("USA_Housing.csv")  # Removed absolute path
 
 
 #Preprocessing 
@@ -74,6 +74,6 @@ for name, model in models.items():
 
 # Convert results to DataFrame and save to CSV
 results_df = pd.DataFrame(results)
-results_df.to_csv("model_evaluation_results.csv", index=False)
+results_df.to_csv("model_evaluation_results.csv", index=False)  # Saves in the current working directory
 
 print("Models have been trained and saved as pickle files. Evaluation results have been saved to model_evaluation_results.csv")
