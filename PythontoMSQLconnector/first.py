@@ -4,4 +4,4 @@ conn = mysql.connector.connect(host = "localhost", user = "root", password = "En
 
 if conn.is_connected():
     print("Connection Established")
-print(conn)
+print()
