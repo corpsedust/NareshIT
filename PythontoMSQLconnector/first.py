@@ -7,10 +7,15 @@ if conn.is_connected():
 print()
 
 mycursor = conn.cursor()
-mycursor.execute('show databases')
-myresult = mycursor.fetchall()
+# mycursor.execute('show databases')
+# myresult = mycursor.fetchall()
+# for x in mycursor:
+#     print(mycursor)
+    
+    
+mycursor.execute('use pythondb')
+mycursor.execute("create table student(name varchar(50), branch varchar(10), id int")
+mycursor.execute("show tables")
+
 for x in mycursor:
-    print(mycursor)
-    
-    
-mycursor.execute('create database pythondb')
+    print(x)
