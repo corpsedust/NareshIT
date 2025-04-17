@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Thu Apr 17 19:43:20 2025
+
+@author: vineet
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Wed Apr 16 20:01:56 2025
 
 @author: vineet
@@ -31,14 +38,14 @@ x_train, x_test, y_train, y_test = train_test_split(x,y,train_size=0.80, random_
 #x_train = sc.fit_transform(x_train)
 #x_test = sc.fit_transform(x_test)
 
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 
-dt = DecisionTreeClassifier(criterion="entropy", max_depth=10, random_state=None)
-dt.fit(x_train, y_train)
+rfc = RandomForestClassifier(criterion="entropy")
+rfc.fit(x_train, y_train)
 
 
-y_pred = dt.predict(x_test)
+y_pred = rfc.predict(x_test)
 
 from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
 cm = confusion_matrix(y_test, y_pred)
@@ -47,7 +54,7 @@ print("Confusion Matrix : \n", cm)
 ac = accuracy_score(y_test, y_pred)
 print(f"Accuracy Score : {ac}")
 
-variance = dt.score(x_train, y_train)
+variance = rfc.score(x_train, y_train)
 print(f"Variance : {variance}")
 
 
