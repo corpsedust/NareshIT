@@ -14,7 +14,7 @@ y = df.iloc[:-1].values
 #Encoding Categorical dataa
 
 from sklearn.preprocessing import LabelEncoder
-le = LanbelEncoder()
+le = LabelEncoder()
 X[:,2] = le.fit_transform(X[:,2])
 
 
