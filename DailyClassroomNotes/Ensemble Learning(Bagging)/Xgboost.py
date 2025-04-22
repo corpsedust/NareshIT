@@ -17,7 +17,6 @@ from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 X[:,2] = le.fit_transform(X[:,2])
 
-
 #Onehot encoding the "Geography" column 
 
 from sklearn.compose import ColumnTransformer
