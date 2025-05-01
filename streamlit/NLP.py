@@ -64,10 +64,11 @@ wc_button = st.button(label = "Generate word cloud for given paragraph")
 
 
 if wc_button:
+    fig, ax = plt.subplots(figsize=(10,8))
     wordcloud = WordCloud(width = 420, height = 200, margin = 2, background_color = "black", colormap = "Accent", mode = "RGBA")
     wordcloud.generate(text)
-    figure = plt.imshow(wordcloud, interpolation = 'quadric')
+    plt.imshow(wordcloud, interpolation = 'quadric')
     plt.axis("off")
     plt.margins(x=0, y=0)
-    plt.show()
-    st.pyplot(figure)
+    # plt.show()
+    st.pyplot(fig)
