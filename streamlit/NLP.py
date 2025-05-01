@@ -6,13 +6,8 @@ import matplotlib.pyplot as plt
 
 
 st.title("Natural language Understanding")
-
 st.subheader("Tokenization")
-
 text = st.text_area("Enter a paragraph")
-
-
-
 
 
 st.markdown(
@@ -42,17 +37,12 @@ for i in range(col):
         
 if buttons[0]:
     st.write(word_tokenize(text))
-    
-    
 if buttons[1]:
     st.write(sent_tokenize(text))
-    
 if buttons[2]:
     st.write(blankline_tokenize(text))
-    
 if buttons[3]:
     st.write(WhitespaceTokenizer().tokenize(text))
-    
 if buttons[4]:
     st.write(wordpunct_tokenize(text))
 
