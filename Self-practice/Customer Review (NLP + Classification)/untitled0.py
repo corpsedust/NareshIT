@@ -12,7 +12,7 @@ import pandas as pd
 dataset = pd.read_csv(r"C:\Users\vineet\Desktop\textcleanup\Restaurant_Reviews.tsv", delimiter="\t")
 
 
-#Cleaning the text - lol
+#Cleaning the text 
 import re
 import nltk
 from nltk.corpus import stopwords
@@ -27,5 +27,9 @@ for i in range(1, 1000):
     review = [ps.stem(word) for word in review if word not in stopwords]
     review = ''.join(review)
     corpus.append(review)
+    
+    
+    
+    
 
 
