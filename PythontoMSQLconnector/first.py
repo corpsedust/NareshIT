@@ -19,4 +19,3 @@ mycursor.execute("show tables")
 
 for x in mycursor:
     print(x)
-    
