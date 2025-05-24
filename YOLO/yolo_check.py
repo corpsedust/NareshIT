@@ -1,0 +1,4 @@
+
+import ultralytics
+ultralytics.chekcs() 
+
